@@ -19,7 +19,10 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
+  # Reference: https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-macos
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: pguzman
+  password: 
 
 development:
   <<: *default
