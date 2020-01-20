@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    api:
+        build: api
+    
+    analysis:
+        build: analysis
+
+    webapp: 
+        build: webapp
+volumes:
+    ./tmp:/tmp/
