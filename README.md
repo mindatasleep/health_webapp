@@ -64,3 +64,14 @@ docker-compose run app rails db:create
 docker rm -v $(sudo docker ps -aq -f status=exited)
 
 ```
+
+
+## Run top-level docker-compose
+
+```
+docker-container up --build
+# On a different terminal
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate RAILS_ENV=development
+
+```

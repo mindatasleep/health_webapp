@@ -1,21 +1,26 @@
 version: '3.7'
 services:
-    api:
-        build: api
-    analysis:
-        build: analysis
-    webapp: 
-        build: webapp
+    web:
+        build: ./webapp
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        volumes:
+            # - .:/myapp
+            -  ./webapp:/myapp
+        ports:
+            - "3000:3000"
+        depends_on:
+            - db
     db:
         image: postgres:12.1
         volumes:
-            - "db-data:/var/lib/postgresql/data"
-        networks: 
-            - back-tier
+            # - ./tmp/db:/var/lib/postgresql/data
+            - db-data:/var/lib/postgresql/data
+        # networks: 
+            # - back-tier
 
 volumes:
     db-data: {}
 
-networks:
-    front-tier: {}
-    back-tier: {}
+# networks:
+#     front-tier: {}
+#     back-tier: {}
