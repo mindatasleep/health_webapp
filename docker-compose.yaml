@@ -1,13 +1,21 @@
-version: '3'
-
+version: '3.7'
 services:
     api:
         build: api
-    
     analysis:
         build: analysis
-
     webapp: 
         build: webapp
+    db:
+        image: postgres:12.1
+        volumes:
+            - "db-data:/var/lib/postgresql/data"
+        networks: 
+            - back-tier
+
 volumes:
-    ./tmp:/tmp/
+    db-data: {}
+
+networks:
+    front-tier: {}
+    back-tier: {}
