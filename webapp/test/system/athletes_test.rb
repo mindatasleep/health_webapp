@@ -14,10 +14,11 @@ class AthletesTest < ApplicationSystemTestCase
     visit athletes_url
     click_on "New Athlete"
 
-    fill_in "Age", with: @athlete.age
     fill_in "Birthdate", with: @athlete.birthdate
     fill_in "Description", with: @athlete.description
+    check "Healthy" if @athlete.healthy
     fill_in "Name", with: @athlete.name
+    fill_in "Number", with: @athlete.number
     click_on "Create Athlete"
 
     assert_text "Athlete was successfully created"
@@ -28,10 +29,11 @@ class AthletesTest < ApplicationSystemTestCase
     visit athletes_url
     click_on "Edit", match: :first
 
-    fill_in "Age", with: @athlete.age
     fill_in "Birthdate", with: @athlete.birthdate
     fill_in "Description", with: @athlete.description
+    check "Healthy" if @athlete.healthy
     fill_in "Name", with: @athlete.name
+    fill_in "Number", with: @athlete.number
     click_on "Update Athlete"
 
     assert_text "Athlete was successfully updated"

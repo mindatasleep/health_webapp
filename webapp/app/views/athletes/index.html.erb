@@ -7,8 +7,9 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Age</th>
       <th>Birthdate</th>
+      <th>Number</th>
+      <th>Healthy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +19,9 @@
       <tr>
         <td><%= athlete.name %></td>
         <td><%= athlete.description %></td>
-        <td><%= athlete.age %></td>
         <td><%= athlete.birthdate %></td>
+        <td><%= athlete.number %></td>
+        <td><%= athlete.healthy %></td>
         <td><%= link_to 'Show', athlete %></td>
         <td><%= link_to 'Edit', edit_athlete_path(athlete) %></td>
         <td><%= link_to 'Destroy', athlete, method: :delete, data: { confirm: 'Are you sure?' } %></td>

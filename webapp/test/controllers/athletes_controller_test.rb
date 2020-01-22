@@ -17,7 +17,7 @@ class AthletesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create athlete" do
     assert_difference('Athlete.count') do
-      post athletes_url, params: { athlete: { age: @athlete.age, birthdate: @athlete.birthdate, description: @athlete.description, name: @athlete.name } }
+      post athletes_url, params: { athlete: { birthdate: @athlete.birthdate, description: @athlete.description, healthy: @athlete.healthy, name: @athlete.name, number: @athlete.number } }
     end
 
     assert_redirected_to athlete_url(Athlete.last)
@@ -34,7 +34,7 @@ class AthletesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update athlete" do
-    patch athlete_url(@athlete), params: { athlete: { age: @athlete.age, birthdate: @athlete.birthdate, description: @athlete.description, name: @athlete.name } }
+    patch athlete_url(@athlete), params: { athlete: { birthdate: @athlete.birthdate, description: @athlete.description, healthy: @athlete.healthy, name: @athlete.name, number: @athlete.number } }
     assert_redirected_to athlete_url(@athlete)
   end
 

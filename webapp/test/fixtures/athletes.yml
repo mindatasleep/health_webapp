@@ -3,11 +3,13 @@
 one:
   name: MyString
   description: MyText
-  age: 1
-  birthdate: 2020-01-20
+  birthdate: 2020-01-22 03:48:15
+  number: 1
+  healthy: false
 
 two:
   name: MyString
   description: MyText
-  age: 1
-  birthdate: 2020-01-20
+  birthdate: 2020-01-22 03:48:15
+  number: 1
+  healthy: false

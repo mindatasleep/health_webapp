@@ -22,13 +22,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
+    <%= form.label :birthdate %>
+    <%= form.datetime_select :birthdate %>
   </div>
 
   <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :healthy %>
+    <%= form.check_box :healthy %>
   </div>
 
   <div class="actions">

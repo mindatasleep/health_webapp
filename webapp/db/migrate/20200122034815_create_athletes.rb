@@ -3,8 +3,9 @@ class CreateAthletes < ActiveRecord::Migration[6.0]
     create_table :athletes do |t|
       t.string :name
       t.text :description
-      t.integer :age
-      t.date :birthdate
+      t.datetime :birthdate
+      t.integer :number
+      t.boolean :healthy
 
       t.timestamps
     end

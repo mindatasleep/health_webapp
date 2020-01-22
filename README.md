@@ -1,6 +1,6 @@
 # SmoothPeaks webapp
 
-A containerized web application to study data and automate reporting.
+A containerized Ruby on Rails web application to study data and automate reporting. Developed for Smooth Peaks, an athletics Data Science company.
 
 Consists of the following modules:
 - Data warehousing (TBD)
@@ -19,6 +19,8 @@ python3 -m analysis.src.data_import analysis/src/data/
 
 ```
 python3 -m analysis.src.studies.iris analysis/src/data/ analysis/src/plots/plot1.png
+
+python3 -m src.studies.vega_test src/data/ src/tmp/plot_vega.html
 
 ```
 
@@ -51,6 +53,7 @@ docker run --rm -i -p 5000:5000 pythonflaskdemo:latest
 docker-compose run --rm --service-ports app bash. 
 docker-compose\'a0run [options] name_of_service [command to run]
 
+
 docker-compose build
 docker-compose run web rake db:create db:migrate
 docker-compose up
@@ -60,8 +63,15 @@ docker-compose exec app rails db:create
 # or if the container was not yet started
 docker-compose run app rails db:create
 
+# Rails drop table through console
+rails console
+ActiveRecord::Migration.drop_table(:table_name)
+
 # Remove stopped containers
 docker rm -v $(sudo docker ps -aq -f status=exited)
+
+# Exec
+docker container exec -it smoothpeaks_web_1 ls
 
 ```
 

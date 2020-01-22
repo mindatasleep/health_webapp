@@ -1,0 +1,2 @@
+class SnowflakeController < ApplicationController
+end

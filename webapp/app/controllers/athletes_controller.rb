@@ -69,6 +69,6 @@ class AthletesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def athlete_params
-      params.require(:athlete).permit(:name, :description, :age, :birthdate)
+      params.require(:athlete).permit(:name, :description, :birthdate, :number, :healthy)
     end
 end

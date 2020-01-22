@@ -65,9 +65,8 @@ def main():
     # plt.show()
     plt.savefig(OUTPUT_DIR)
     print('PRINT Saved to: {}'.format(OUTPUT_DIR))
-    logging.warning('Saved to: {}'.format(OUTPUT_DIR))
+    logging.info('Saved to: {}'.format(OUTPUT_DIR))
 
 if __name__ == "__main__":
-    print('Starting . . .')
-    logging.warning('Starting . . .')
+    logging.info('Starting . . .')
     main()
