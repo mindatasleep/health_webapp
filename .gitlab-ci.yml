@@ -1,3 +1,6 @@
+# GitLab CI
+# Reference: https://medium.com/@sean_bradley/auto-devops-with-gitlab-ci-and-docker-compose-f931233f080f
+
 image: docker:latest
 services:
   - docker:dind
