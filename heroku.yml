@@ -1,0 +1,9 @@
+setup:
+    addons:
+    - plan: heroku-postgresql
+      as: DATABASE
+
+build:
+    docker:
+        webapp: webapp/Dockerfile
+        analysis: analysis/Dockerfile
